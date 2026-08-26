@@ -228,6 +228,7 @@
     border-color:var(--gold-soft);
     color:var(--gold);
   }
+  .cat-chip .en{opacity:.65; font-size:11px;}
 
   .legend{
     max-width:640px;
@@ -559,7 +560,7 @@ let activeCat = null;
 function buildChips(){
   const cats = [...new Set(DATA.map(d => d[0]))];
   catChips.innerHTML = DATA.map(([en,ar]) =>
-    `<button class="cat-chip" data-cat="${en}">${ar}</button>`
+    `<button class="cat-chip" data-cat="${en}">${ar} <span class="en">· ${en}</span></button>`
   ).join('');
   catChips.querySelectorAll('.cat-chip').forEach(btn=>{
     btn.addEventListener('click', ()=>{
